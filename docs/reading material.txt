@@ -1,0 +1,60 @@
+project_name/
+│
+├── README.md
+├── requirements.txt / pyproject.toml
+├── .gitignore
+├── config/
+│   └── config.yaml
+│
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── external/
+│
+├── notebooks/
+│   ├── 01_exploration.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_modeling.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   │
+│   ├── data/
+│   │   ├── load_data.py
+│   │   ├── preprocess.py
+│   │   └── validate.py
+│   │
+│   ├── features/
+│   │   └── build_features.py
+│   │
+│   ├── models/
+│   │   ├── train.py
+│   │   ├── predict.py
+│   │   └── evaluate.py
+│   │
+│   ├── visualization/
+│   │   └── plots.py
+│   │
+│   └── utils/
+│       └── helpers.py
+│
+├── models/              # saved trained models
+│   └── model_v1.pkl
+│
+├── reports/
+│   ├── figures/
+│   └── metrics/
+│
+├── app/                 # Dash app (separate from ML logic)
+│   ├── app.py
+│   ├── layout.py
+│   ├── callbacks.py
+│   └── assets/
+│       └── styles.css
+│
+├── tests/
+│   └── test_data.py
+│
+└── scripts/
+    ├── run_training.py
+    └── run_app.py
