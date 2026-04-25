@@ -9,7 +9,7 @@ def create_layout():
     return html.Div(style={'fontFamily': 'system-ui, sans-serif', 'maxWidth': '1200px', 'margin': '0 auto', 'padding': '20px'}, children=[
         
         html.Header([
-            html.H1("☕ Coffee Climate Pulse", style={'textAlign': 'center', 'color': '#3E2723'}),
+            html.H1("Coffee Climate Pulse", style={'textAlign': 'center', 'color': '#3E2723'}),
             html.P("Tracking the chain reaction from global climate shifts to human physiological response.", 
                    style={'textAlign': 'center', 'color': '#5D4037', 'marginBottom': '30px'})
         ]),
@@ -17,7 +17,7 @@ def create_layout():
         dcc.Tabs(colors={'border': '#d6d6d6', 'primary': '#795548', 'background': '#f9f9f9'}, children=[
             
             # TAB 1: PLANET PULSE
-            dcc.Tab(label='🌍 Planet Pulse', children=[
+            dcc.Tab(label='Planet Pulse', children=[
                 html.Div([
                     html.H3("Global Production vs. Climate Stress"),
                     dcc.Graph(id='yield-map'),
@@ -32,7 +32,7 @@ def create_layout():
             ]),
 
             # TAB 2: BEAN PULSE
-            dcc.Tab(label='☕ Bean Pulse', children=[
+            dcc.Tab(label='Bean Pulse', children=[
                 html.Div([
                     html.H3("Chemical & Sensory Shift by Origin"),
                     html.Label("Select Origin Country:"),
@@ -47,7 +47,7 @@ def create_layout():
             ]),
 
             # TAB 3: HUMAN PULSE
-            dcc.Tab(label='❤️ Human Pulse', children=[
+            dcc.Tab(label='Human Pulse', children=[
                 html.Div([
                     html.H3("Simulated Heart Rate Response"),
                     html.Label("Estimated Caffeine Intake (mg):"),
