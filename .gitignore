@@ -5,6 +5,7 @@ __pycache__/
 
 # folders
 notebooks-experimental-reference/
+app-reference/
 
 # C extensions
 *.so
