@@ -2,6 +2,7 @@ import os
 import pandas as pd
 import joblib
 
+
 # These are just creating reusable strings for our file paths
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.dirname(ROOT)
@@ -27,7 +28,7 @@ quality_feats   = joblib.load(os.path.join(MDL, 'quality_features.pkl'))
 radar_cols      = joblib.load(os.path.join(MDL, 'radar_cols.pkl'))
 
 
-
+# Constants
 YEARS = [int(y) for y in sorted(df_fao['Year'].dropna().unique())]
 ENV_COUNTRIES = sorted(df_env_country['Country'].dropna().unique())
 CHEM_COUNTRIES = sorted(df_chem['Country'].dropna().unique())
@@ -47,3 +48,5 @@ C = {
     'blue':   '#2E86AB',
     'green':  '#27AE60',
 }
+
+

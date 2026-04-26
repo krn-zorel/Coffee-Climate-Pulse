@@ -19,3 +19,35 @@ body {
     color: #888888;
 }
 
+.card {
+    background-color: #141414;
+    border: 1px solid #2A2A2A;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.section-title {
+    color: #F5A623;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 12px;
+}
+
+.stat-value {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #888888;
+}
+
+.main {
+    min-height: 100vh;
+}

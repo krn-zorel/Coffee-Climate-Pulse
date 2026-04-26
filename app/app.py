@@ -3,8 +3,8 @@
 #       numpy scikit-learn joblib
 import dash
 import dash_bootstrap_components as dbc
-from layout import create_layout
-from callbacks import register_callbacks
+from app.layout import create_layout
+from app.callbacks import register_callbacks
 
 app = dash.Dash(
     __name__,

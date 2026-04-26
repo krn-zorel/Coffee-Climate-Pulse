@@ -1,6 +1,6 @@
 from dash import html, dcc
 import dash_bootstrap_components as dbc
-from data import YEARS, ENV_COUNTRIES, CHEM_COUNTRIES, C
+from app.data import YEARS, ENV_COUNTRIES, CHEM_COUNTRIES, C
 
 
 def card(children):
@@ -14,6 +14,8 @@ def stat_box(label, value):
         html.Div(value, className="stat-value"),
         html.Div(label, className="stat-label")
     ], className="stat-box")
+
+
 
 def create_layout():
     # Main div body of html page
