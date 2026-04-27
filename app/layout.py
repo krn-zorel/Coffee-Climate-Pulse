@@ -3,8 +3,8 @@ import dash_bootstrap_components as dbc
 from app.data import YEARS, ENV_COUNTRIES, CHEM_COUNTRIES, C
 
 
-def card(children):
-    return html.Div(children, className="card")
+def card(children,**kwargs):
+    return html.Div(children, className="card",**kwargs)
 
 def section_title(text):
     return html.H4(text, className="section-title")

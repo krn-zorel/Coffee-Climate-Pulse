@@ -27,7 +27,23 @@ def register_callbacks(app):
         dff = df_fao[df_fao['Year']==year]
         fig=px.choropleth(
             dff, locations='Country', locationmode='country names',
-            color='Yield'
+            color='Yield', color_continuous_scale='YlOrRd',
+            range_color=[df_fao['Yield'].quantile(0.05),df_fao['Yield'].quantile(0.95)],
+            labels={'Yield':'Yield (Hg/Ha)'},
+            title=f'Global Coffee Yield - {year}',
+            hover_name='Country', hover_data={'Yield':':.0f'},
+        )
+        fig.update_layout(
+            paper_bgcolor = C['bg'], plot_bgcolor=C['bg'], font_color=C['text'],
+            geo=dict(bgcolor=C['bg'], showframe=False,
+                     showcoastlines=True,
+                     coastlinecolor='#333',showland=True,
+                     landcolor='#1A1A1A',
+                     showocean=True,
+                     oceancolor='#111'),
+                     margin=dict(l=0, r=0, t=40, b=0),
+                     coloraxis_colorbar=dict(tickfont=dict(color=C['text']),
+                    title='Hg/Ha'),
         )
         return fig
 

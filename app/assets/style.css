@@ -51,3 +51,30 @@ body {
 .main {
     min-height: 100vh;
 }
+
+/* .rc-slider-mark-text {
+    color: rgb(186, 185, 185) !important;
+}
+
+.rc-slider-mark-text-active {
+    color: white !important;
+    font-weight: bold;
+} */
+
+/* Hide anything Dash injects near the handle */
+div[class*="range-slider"] input {
+    display: none !important;
+}
+
+
+.dash-range-slider {
+    align-items: center !important;
+}
+.dash-range-slider-input,
+.dash-range-slider-input:focus,
+.dash-range-slider-input:active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
