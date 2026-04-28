@@ -12,6 +12,8 @@ DROPDOWN_STYLE = {'backgroundColor': '#1F1F1F', 'color': '#000', 'fontSize': '13
 
 ## Tab 1 - Planet Pulse
 tab_planet = html.Div([
+
+    #Choropleth Map
     dbc.Row([
         dbc.Col(card([
         section_title('Yield at Risk - Global Choropleth'),
@@ -27,13 +29,15 @@ tab_planet = html.Div([
                     "label": str(int(y)),
                     "style":{"color":"white"}
                 }for y in YEARS[::5]},
-                tooltip={'placement': 'bottom', 'always_visible': False}
+                tooltip=False
             ),
         dcc.Graph(id='choropleth-map', style={'height': '450px'}),
         ]), width=12),
     ]),
 
     dbc.Row([
+
+    # Temp Trend Chart
         dbc.Col(card([
             section_title('Temperature Trend by Country'),
             dcc.Dropdown(
@@ -44,7 +48,28 @@ tab_planet = html.Div([
                 style=DROPDOWN_STYLE,
             ),
             dcc.Graph(id='temp-trend-chart', style={'height':'320px'}),
-        ]), md=7)
+        ]), md=7),
+
+        # Coffee Price Predictor by Climate
+        dbc.Col(card([
+            section_title('Climate → Price Predictor'),
+            html.P('Predcit coffee price from climate inputs using the GBR model.',
+            style={'color':C['muted'],'fontSize':'12px'}),
+            html.Label('Country:',
+            style=LABEL_STYLE),
+            dcc.Dropdown(
+                id='pred-country-env',
+                options=[{'label':c,'value:':c}for c in ENV_COUNTRIES],
+                value=ENV_COUNTRIES[0],
+                style=DROPDOWN_STYLE,
+            ),
+            html.Label('Avg Temperature (°C):',style=LABEL_STYLE),
+            dcc.Slider(id='pred-temp',min=10,max=35,step=0.5,value=24,
+            marks={i:str(i) for i in range(10,36,5)},
+            # tooltip={'always_visible':False})
+            tooltip=False),
+
+        ])),
     ])
    
 ])
