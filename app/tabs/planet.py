@@ -32,10 +32,7 @@ tab_planet = html.Div([
                 tooltip=False,
                 updatemode='drag',
         ),
-        html.Div(
-            dcc.Graph(id='choropleth-map', style={'height': '450px'}),
-            style={'marginTop':'30px'}
-        )
+        dcc.Graph(id='choropleth-map', style={'height': '450px','marginTop':'30px'}),
         ]), width=12),
     ]),
 
